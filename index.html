@@ -90,28 +90,37 @@
 
         <section class="contact swiper-slide">
             <div class="contact__container">
-                <form class="contact__form">
-                    <div class="contact__title title">Контакты</div>
-                    <div class="input__list">
-                        <div class="input__item">
-                            <label class="input__label"  for="fname">Имя*</label>
-                            <input class="contact__input" type="text">
+
+                <div class="form">
+                    <form action="#" class="contact__form form__body" id="form">
+                        <div class="contact__title title">Контакты</div>
+                        <div class="input__list">
+                            <div class="input__item">
+                                <label class="input__label " for="fname">Имя*</label>
+                                <input name="fname" id="fname" class="contact__input _req" type="text">
+                            </div>
+                            <div class="input__item">
+                                <label class="input__label" for="fsurname">Фамилия*</label>
+                                <input name="fsurname" id="fsurname" class="contact__input _req" type="text">
+                            </div>
+                            <div class="input__item">
+                                <label class="input__label" for="femail">Email*</label>
+                                <input name="femail" id="femail" class="contact__input _req _email" type="mail">
+                            </div>
+                            <div class="input__item">
+                                <label class="input__label" for="fphone">Номер</label>
+                                <input name="fphone" id="fphone" class="contact__input" type="phone">
+                            </div>
                         </div>
+    
                         <div class="input__item">
-                            <label class="input__label" for="fname">Фамилия*</label>
-                            <input class="contact__input" type="text">
+                            <label class="input__label" for="fmessage">Сообщение</label>
+                            <textarea name="fmessage" id="fmessage" class="contact__input contact__textarea" cols="30" rows="30"></textarea>
                         </div>
-                    </div>
-                    <div class="input__item">
-                        <label class="input__label" for="email">Email*</label>
-                        <input class="contact__input" type="text">
-                    </div>
-                    <div class="input__item">
-                        <label class="input__label" for="massege">Сообщение</label>
-                        <textarea class="contact__input contact__textarea" name="" cols="30" rows="30"></textarea>
-                    </div>
-                    <button class="contact__button">Отправить</button>
-                </form>
+                        <button type="submit" class="contact__button">Отправить</button>
+                    </form>
+                </div>
+
                 <footer class="footer">
                     <p class="footer__text">
                         <span>Наш офис находится по адресу:</span> г. Ташкент, Яшнобадский район, ул. Зохидова, д.14А <br>
