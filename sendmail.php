@@ -14,10 +14,10 @@
     $mail->setFrom('projects@kingdesignn.ru', 'Decont Farm Site');
 
     // Кому письмо
-    $mail->addAdress('zolotojznak@gmail.com');
+    $mail->addAddress('zolotojznak@gmail.com');
     
     // Тема письма 
-    $mail->Subject = 'Привет мир';
+    $mail->Subject = 'Email from Site';
 
 
     // Тело письма
