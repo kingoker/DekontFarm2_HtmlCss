@@ -124,6 +124,15 @@ html, body{
     z-index: 2;
     border-radius: 5px;
 }
+.main__container::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 50px;
+    background-color: #4F5958;
+    width: 90%;
+}
 .main-white__text{
     display: flex;
 }
@@ -138,8 +147,8 @@ html, body{
 }
 .subtitle{
     font-weight: 500;
-    font-size: 60px;
-    line-height: 62px;
+    font-size: 50px;
+    line-height: 52px;
     color: #fff;
     margin-bottom: 10px;
 }
@@ -156,15 +165,25 @@ html, body{
     display: block;
     max-width: 674px;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 22px;
     color: #4F5958;
     margin-left: 40px;
     text-align: justify;
 }
 .main__logo{
-    width: 500px;
+    position: relative;
+    width: 350px;
     margin-bottom: 50px;
+}
+.main__logo::after{
+    content: "";
+    height: 5px;
+    position: absolute;
+    top: 75%;
+    left: -150%;
+    width: 600%;
+    background-color: #949494;
 }
 .main__logo img{
     width: 100%;
@@ -295,10 +314,10 @@ html, body{
     color: #FFFFFF;
 }
 .input__item{
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 .contact__textarea{
-    height: 130px;
+    height: 80px;
     padding-top: 10px;
     resize: none;
 }
@@ -390,7 +409,9 @@ html, body{
     .main__text {
         margin-left: 10px;
     }
-    
+    .header{
+        display: none;
+    }  
 }
 @media (max-width: 859px) {
 
@@ -399,9 +420,6 @@ html, body{
     }
     .logo {
         max-width: 260px;
-    }
-    .header{
-        display: none;
     }
     .about-grey {
         padding: 30px 30px 70px 30px;
@@ -421,12 +439,6 @@ html, body{
     }
 }
 @media (max-width: 560px) {
-    .our-mission{
-        display: none;
-    }
-    .language{
-        display: none;
-    }
     .header__list {
         display: flex;
         flex-direction: row;
