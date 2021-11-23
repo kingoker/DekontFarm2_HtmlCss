@@ -1,54 +1,18 @@
 <?php
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+  $body = 'CPH-International.com'.
+    '
+    Name: '.$_POST['fname'].
+    '
+    Surname: '.$_POST['fsurname'].
+    '
+    Email: '.$_POST['femail'].
+    '
+    Phone: '.$_POST['fphone'].
+    '
+    Text: '.$_POST['fmessage'].'';
 
-    require 'phpmailer/src/Exception.php';
-    require 'phpmailer/src/PHPMailer.php';
+  $message = $body;
+  $message = wordwrap($message, 70);
 
-    $mail = new PHPMailer(true);
-    $mail->Charset = 'UTF-8';
-    $mail->setLanguage('ru', 'phpmailer/language/');
-    $mail->IsHTML(true);
-
-    // От кого письмо
-    $mail->setFrom('projects@kingdesignn.ru', 'Decont Farm Site');
-
-    // Кому письмо
-    $mail->addAddress('zolotojznak@gmail.com');
-    
-    // Тема письма 
-    $mail->Subject = 'Email from Site';
-
-
-    // Тело письма
-    $body = '<h1>Встречайте супер письмо</h1>';
-
-    if(trim(!empty($_POST['fname']))){
-        $body.='<p><strong>Имя: <strong>'.$_POST['fname'].'</p>';
-    }
-    if(trim(!empty($_POST['fsurname']))){
-        $body.='<p><strong>Фамилия: <strong>'.$_POST['fsurname'].'</p>';
-    }
-    if(trim(!empty($_POST['femail']))){
-        $body.='<p><strong>Email: <strong>'.$_POST['femail'].'</p>';
-    }
-    if(trim(!empty($_POST['fphone']))){
-        $body.='<p><strong>Телефон: <strong>'.$_POST['fphone'].'</p>';
-    }
-    if(trim(!empty($_POST['fmessage']))){
-        $body.='<p><strong>Текст: <strong>'.$_POST['fmessage'].'</p>';
-    }
-
-    $mail->Body = $body;
-
-    if(!$mail->send()){
-        $message = 'Ошибка';
-    }else{
-        $message = 'Данные отправлены!';
-    }
-
-    $response = ['message' => $message];
-
-    header('Content-type: application/json');
-    echo json_encode($response);
+  var_dump(mail('elena.khachieva@cph-international.com', 'Message from CPH-International.com', $message));
 ?>

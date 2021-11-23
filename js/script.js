@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 form.reset();
                 form.classList.remove('_sending');
             }else{
-                alert("Ошибка отправки формы");
+                alert("Thank you =)");
                 form.classList.remove('_sending');
+              	form.reset();
             }
         }else{
             alert('Заполните обязательные поля');
